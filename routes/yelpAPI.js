@@ -13,13 +13,27 @@ var yelp = new Yelp({
 router.get("/search", function(req, res, next) {
   yelp.search({ term: 'food', location: '303 2nd St San Francisco CA' })
       .then(function (data) {
-        console.log(data);
-          res.send(data);
+        var newData = removeClosedRestaurants(data);
+        
+        console.log(newData);
+          res.send(newData);
       })
       .catch(function (err) {
         console.error(err);
       });
 });
+
+function removeClosedRestaurants(data) {
+  var updated = [];
+  var businesses = data.businesses;
+  for (i = 0; i < businesses.length; i++) {
+    var place = businesses[i];
+    if (place.is_closed == false) {
+      updated.push(place);
+    }
+  }
+  return updated;
+}
 
 console.log("hi");
 module.exports = router;
