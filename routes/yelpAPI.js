@@ -15,7 +15,7 @@ router.get("/search", function(req, res, next) {
     { 
       term: 'food', 
       location: '303 2nd St San Francisco CA',
-      radius_filter: '10'
+      radius_filter: YELP_DISTANCE
     })
       .then(function (data) {
         var newData = removeClosedRestaurants(data);
