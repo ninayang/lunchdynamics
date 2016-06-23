@@ -33,6 +33,9 @@ $(document).ready(function() {
 
             var thumbNailCtn = $("<div></div>");
             thumbNailCtn.addClass("col-sm-6 col-md-4");
+            //thumbNailCtn.css({
+                //"box-shadow" : "rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px"
+            //});
 
             var thumbNail = $("<div></div>");
             thumbNail.addClass("thumbnail");
@@ -65,6 +68,7 @@ $(document).ready(function() {
 
             counter += 1;
         }
+        $("body").append(row);
     }
 
     function startNewRow(rowId) {

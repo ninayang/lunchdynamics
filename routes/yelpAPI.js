@@ -12,7 +12,7 @@ var yelp = new Yelp({
 
 router.get("/search", function(req, res, next) {
   yelp.search(
-    { 
+    {
       term: 'food', 
       location: '303 2nd St San Francisco CA',
       radius_filter: YELP_DISTANCE
