@@ -2,9 +2,10 @@
 
 <html>
 	<head>
+		<script src="javascripts/moment.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	    <script src="javascripts/homePage.js"></script>
-	    <script src="javascripts/moment.min.js"></script>
+	    <script src="javascripts/calendarApi.js"></script>
 	    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 	    <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -16,11 +17,21 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 	</head>
 	<body>
-		<div class="jumbotron">
+		<div class="jumbotron, text-center">
 			<h1>LunchDynamics</h1>
 			<p>Welcome to your go-to lunch performance management application</p>
-			<button id="find-food" class="btn btn-primary btn-large" type="button">Find Me Food</button>
+			<p>The current time is: <span id="currentTime"></span></p>
+			<p id="nextEvent"></p>
 		</div>
+		<button id="find-food" class="btn btn-primary btn-large" type="button">Find Me Food</button>
+		
+		<div id="authorize-div" style="display: none">
+      		<span>Authorize access to Google Calendar API</span>
+      		<!--Button for the user to click to initiate auth sequence -->
+      		<button id="authorize-button" onclick="handleAuthClick(event)">
+        	Authorize
+      		</button>
+      	</div>
 
 	</body>
 

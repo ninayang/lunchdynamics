@@ -7,7 +7,6 @@ var session = require('express-session')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var yelpApi = require('./routes/yelpApi')
-var googleApi = require('./routes/googleApi')
 
 var app = express();
 var passport = require('passport');
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/yelp', yelpApi);
-app.use('/gcal', googleApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
