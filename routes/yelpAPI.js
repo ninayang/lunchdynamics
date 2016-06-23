@@ -14,8 +14,6 @@ router.get("/search", function(req, res, next) {
   yelp.search({ term: 'food', location: '303 2nd St San Francisco CA' })
       .then(function (data) {
         var newData = removeClosedRestaurants(data);
-        
-        console.log(newData);
           res.send(newData);
       })
       .catch(function (err) {

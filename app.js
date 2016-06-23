@@ -2,13 +2,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var yelpApi = require('./routes/yelpApi')
+var googleApi = require('./routes/googleApi')
 
 var app = express();
-
+var passport = require('passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,11 +20,16 @@ app.set('view engine', 'html');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// app.use(express.session({ secret: 'keyboard cat' }));
+app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/yelp', yelpApi);
+app.use('/gcal', googleApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
