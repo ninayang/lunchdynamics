@@ -16,6 +16,10 @@ $(document).ready(function() {
         var row = $("<div></div>");
         row.addClass("row");
         row.attr("id", rowId + "");
+        row.css({
+            "width" : "60%",
+            "margin" : "auto"
+        });
         for (var i = 0; i < data.length; i++) {
 
             var restaurant = data[i];
@@ -32,6 +36,9 @@ $(document).ready(function() {
 
             var thumbNail = $("<div></div>");
             thumbNail.addClass("thumbnail");
+            thumbNail.css({
+                "padding" : "6px"
+            });
 
             var img = $('<img />', {
                 src: restaurant.image_url
@@ -64,6 +71,10 @@ $(document).ready(function() {
         var row = $("<div></div>");
         row.addClass("row");
         row.attr("id", rowId + "");
+        row.css({
+            "width" : "60%",
+            "margin" : "auto"
+        });
         return row;
     }
 
