@@ -4,8 +4,8 @@
 	<head>
 		<script src="javascripts/moment.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	    <script src="javascripts/homePage.js"></script>
 	    <script src="javascripts/calendarApi.js"></script>
+	    <script src="javascripts/homePage.js"></script>
 	    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 	    <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -17,11 +17,17 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 	</head>
 	<body>
+		<div id="container">
+			<img class="bg-image" style="background: url('/images/appdHomePageImage.png') no-repeat center center; background-size: cover;"></img>
+			<div class="imgtext">
+				<h1 id="title">LunchDynamics</h1>
+				<h2 id="description">The next generation of lunch intelligence has arrived.</h2>
+			</div>
+		</div>
+		
 		<div class="jumbotron, text-center">
-			<h1>LunchDynamics</h1>
-			<p>Welcome to your go-to lunch performance management application</p>
-			<p>The current time is: <span id="currentTime"></span></p>
-			<p id="nextEvent"></p>
+			<p class="times">The current time is: <span id="currentTime"></span></p>
+			<p class="times" id="nextEvent"></p>
 		</div>
 
 		<div id="authorize-div" style="display: none">
