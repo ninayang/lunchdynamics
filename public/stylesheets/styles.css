@@ -37,3 +37,8 @@
 #teal {
 	color: teal;
 }
+
+#foodInput {
+	width: 180px;
+	text-align: center;
+}

@@ -89,6 +89,7 @@ function findNextEvent() {
         eventFound = true;
         timeToNextEvent = moment().to(moment(eventStartTime));
         $("#nextEvent").append("Your next event, <span id='teal'>" + event.summary + "</span>, is " + timeToNextEvent+ ".");
+        $("#lastLine").css("display", "block");
         break;
       }
     }
@@ -97,7 +98,7 @@ function findNextEvent() {
         console.log(timeToNextEvent);
         console.log(eventStartTime.diff(moment()));
       
-        var timeToWalkOneWay = eventStartTime.subtract(20, 'minutes').diff(moment()) / 60000 / 2;
+        var timeToWalkOneWay = eventStartTime.diff(moment()) / 60000 / 2;
         YELP_DISTANCE = timeToWalkOneWay * METERS_PER_MINUTE;
         console.log("time to walk:", timeToWalkOneWay);
         console.log(YELP_DISTANCE);
