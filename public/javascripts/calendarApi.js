@@ -111,6 +111,10 @@ function findNextEvent() {
         .done(function(data) {
           console.log(data);
           createRestaurantBlocks(data);
+          $(".thumbnail").click(function() {
+            console.log("click heard");
+            $(".overlay").show();
+          });
         });
   });
 }
