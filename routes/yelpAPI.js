@@ -10,12 +10,12 @@ var yelp = new Yelp({
   token_secret: 'ujJq0l5BHTBeDYzJRjfmZPB6xWQ',
 });
 
-router.get("/search", function(req, res, next) {
+router.post("/search", function(req, res, next) {
   yelp.search(
     {
       term: 'food', 
       location: '303 2nd St San Francisco CA',
-      radius_filter: YELP_DISTANCE
+      radius_filter: req.body.distance
     })
       .then(function (data) {
         var newData = removeClosedRestaurants(data);
