@@ -88,7 +88,7 @@ function findNextEvent() {
         console.log("what");
         eventFound = true;
         timeToNextEvent = moment().to(moment(eventStartTime));
-        $("#nextEvent").append("Your next event, \"" + event.summary + "\", is " + timeToNextEvent+ ".");
+        $("#nextEvent").append("Your next event, <span id='teal'>" + event.summary + "</span>, is " + timeToNextEvent+ ".");
         break;
       }
     }
